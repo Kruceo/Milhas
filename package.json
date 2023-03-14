@@ -1,0 +1,25 @@
+{
+  "name": "milhas",
+  "version": "0.3.0",
+  "description": "SPA React Router.",
+  "main": "./src/components/Anchor.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kruceo/Milhas.git"
+  },
+  "keywords": [
+    "router",
+    "react",
+    "spa",
+    "preact"
+  ],
+  "author": "Kruceo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kruceo/Milhas/issues"
+  },
+  "homepage": "https://github.com/Kruceo/Milhas#readme"
+}

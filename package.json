@@ -23,15 +23,17 @@
   },
   "homepage": "https://github.com/Kruceo/Milhas#readme",
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
     "@types/react": "^18.0.29",
+    "tslib": "^2.5.0",
     "typescript": "^5.0.2"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "6.0.3",
     "@rollup/plugin-commonjs": "24.0.1",
     "@rollup/plugin-node-resolve": "15.0.1",
-    "rollup-plugin-postcss": "4.0.2",
+    "autoprefixer": "10.4.14",
     "rollup-plugin-filesize": "10.0.0",
-    "autoprefixer": "10.4.14"
+    "rollup-plugin-postcss": "4.0.2"
   }
 }

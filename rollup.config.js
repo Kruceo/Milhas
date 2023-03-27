@@ -6,6 +6,7 @@ import filesize from 'rollup-plugin-filesize';
 import autoprefixer from 'autoprefixer';
 
 import pkg from './package.json';
+import typescript from '@rollup/plugin-typescript';
 
 
 export default [{
@@ -13,5 +14,6 @@ export default [{
     output:[{
         file:'dist/bundle.esm.js',
         fromat:'esm'
-    }]
+    }],
+    plugins:[typescript()]
 }]

@@ -1,6 +1,12 @@
-import { useState } from "preact/hooks"
+import { Children, ReactComponentElement, ReactElement, useState } from "react"
 
-export default function Router(props) {
+interface element {
+    type:{name:string},
+    props:any,
+
+}
+
+export default function Router(props:any) {
     function updateElement() { setUpdate(!update) }
     // window.addEventListener('pathChange', () => updateElement())
     window.addEventListener('popstate', () => updateElement())
@@ -9,9 +15,8 @@ export default function Router(props) {
     const e404 = [null]
     const choose = [null]
 
-    props.children.forEach(path => {
-        if (path.type &&                                                  //filter tagnames, just "Path" and "E404"
-            (!path.type.name === "Path" || !path.type.name === "E404"))
+    props.children.forEach((path:element) => {
+        if (path.type && !(path.type.name === "Path") || !(path.type.name === "E404"))
             return false;
 
         if (path.type.name == "E404") {                                   //Caches the error 404 tag and return to economize
@@ -28,7 +33,7 @@ export default function Router(props) {
 
         }
         let canBeReturned = true                                                       //variable to decide if is acceptable the current url to return a component
-        as.forEach((chunk, index) => {
+        as.forEach((chunk:string, index:number) => {
             if (chunk !== location[index]) {
                 if (!chunk.startsWith('$')) {                                         //verify if the chunk is a variable 
                     canBeReturned = false
@@ -48,6 +53,6 @@ export default function Router(props) {
 }
 
 
-function removeWhiteSpaces(arr) {
+function removeWhiteSpaces(arr:Array<string>) {
     return arr.filter(each => { return each != '' })
 }

@@ -1,17 +1,20 @@
-import navigate from "../lib/navigate.mjs";
+import navigate from "../../lib/navigate";
 /**
  * This component just auto redirect if the same be rendered.
  * @example
  * <Router>
  *    <Path as="/an/older/path">
- *        <Redirect to="/newer/path"/>
+ *        <Redirect href="/newer/path"/>
  *    </Path>
  *    <Path as="/newer/path">
  *        You reach this!
  *    </Path>
  *    ...
  */
-export default function Redirect(props){
-    navigate(props.to)
-    return null
+
+interface props {
+    href:string
+}
+export default function Redirect(props:props):void{
+    navigate(props.href)
 }

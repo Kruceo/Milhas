@@ -13,6 +13,6 @@
  * @param {string} as - Attribute that set the requested path. 
  */
 
-export function Path(props) {
+export default function Path():void {
 }
 

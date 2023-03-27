@@ -9,6 +9,6 @@
  *    </E404>
  *    ...
  */
+export default function E404():void{}
 
-export default function E404(props){
-}
+//testing

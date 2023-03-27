@@ -30,7 +30,7 @@ function Anchor(props:props):ReactElement{
         style={props.style}
         id={props.id}
         href={href}
-        onClick={(e)=>{onclickHandler(e);props.onClick()}}
+        onClick={(e)=>{onclickHandler(e);props.onClick?props.onClick():null}}
         >{props.children}
     </a>)
 }

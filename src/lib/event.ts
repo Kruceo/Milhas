@@ -1,3 +1,4 @@
-const evt = new Event('popstate')
+const popstateEvent = new CustomEvent('popstate',{detail:{name:"popstate"}})
+const pathChangeEvent = new CustomEvent('milhasPathChange',{detail:{name:"milhasPathChange"}})
 
-export default evt
+export {popstateEvent,pathChangeEvent}

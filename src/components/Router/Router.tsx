@@ -1,27 +1,28 @@
-import React, { ReactElement, useState } from "react"
+import React, { PropsWithChildren, ReactElement, ReactNode, useState } from "react"
 import Path from '../Path'
 import E404 from '../E404'
+import { pathChangeEvent, popstateEvent } from '../../lib/event'
 
 
-interface element {
-    type: { name: string },
-    props: any,
+export interface MilhasRouterElement extends PropsWithChildren {
 
 }
 
-function Router(props: any): ReactElement {
-    // return (<h2 id="rafafafa">RAFA</h2>)
+function Router(props: MilhasRouterElement): ReactElement {
 
+    const children = Array.isArray(props.children) ? props.children : [props.children]
+    console.log(children)
     const pathName = Path.name
     const e404name = E404.name
     const updateElement = () => { setUpdate(!update) }
-    window.addEventListener('pathChange', () => updateElement())
-    window.addEventListener('popstate', () => updateElement())
+    window.addEventListener(pathChangeEvent.detail.name, () => updateElement())
+    window.addEventListener(popstateEvent.detail.name, () => updateElement())
 
     const [update, setUpdate] = useState(true)
     const e404: any = [null]
     const choose: any = [null]
-    props.children.forEach((path: element) => {
+
+    children.forEach((path) => {
         console.log(path.type.name, path.type.name != 'Path')
 
         if (path.type.name == e404name) {                      //Caches the error 404 tag and return to economize
@@ -40,7 +41,7 @@ function Router(props: any): ReactElement {
         let canBeReturned = true                                                       //variable to decide if is acceptable the current url to return a component
         as.forEach((chunk: string, index: number) => {
             if (chunk !== location[index]) {
-                if (!chunk.startsWith('$')) {                                         //verify if the chunk is a variable 
+                if (!chunk.startsWith(':')) {                                         //verify if the chunk is a variable 
                     canBeReturned = false
                 }
             }

@@ -1,4 +1,4 @@
-import evt from "./event.js"
+import {popstateEvent} from "./event.js"
 /**
  * Change the window url with any reload.
  * Spawn a "reload" event to Router.
@@ -7,5 +7,5 @@ import evt from "./event.js"
 export default function navigate(url:string):void{
     
     window.history.pushState({id: parseInt(''+(Math.random()*1000))},'null',url)
-    window.dispatchEvent(evt)
+    window.dispatchEvent(popstateEvent)
 }

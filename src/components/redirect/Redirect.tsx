@@ -1,4 +1,7 @@
 import navigate from "../../lib/navigate";
+export interface MilhasRedirectElement{
+    href:string
+}
 /**
  * This component just auto redirect if the same be rendered.
  * @example
@@ -12,9 +15,8 @@ import navigate from "../../lib/navigate";
  *    ...
  */
 
-interface props {
-    href:string
-}
-export default function Redirect(props:props):void{
+
+export default function Redirect(props:MilhasRedirectElement){
     navigate(props.href)
+    return <div id={"MilhasTrashRedirect" + props.href} style={{display:'none',position:'fixed',width:0,height:0,left:-100,top:-100}}></div>
 }

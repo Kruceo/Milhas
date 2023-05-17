@@ -1,6 +1,6 @@
 {
   "name": "milhas",
-  "version": "0.3.0",
+  "version": "0.7.0",
   "description": "SPA React Router.",
   "main": "./src/index.ts",
   "scripts": {

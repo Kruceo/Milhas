@@ -1,3 +1,10 @@
+import { PropsWithChildren } from "react"
+
+export interface MilhasPathElement extends PropsWithChildren{
+    as:string,
+    absolute?:boolean
+}
+
 /**
  * Component that's a path of router, this set's the content to be returned if an specific url is updated;
  * @example 
@@ -11,8 +18,10 @@
  *    </Path>
  *    ...
  * @param {string} as - Attribute that set the requested path. 
+ * 
  */
 
-export default function Path():void {
+export default function Path(props:MilhasPathElement) {
+    return <div id={"MilhasTrash" + props.as} style={{display:'none',position:'fixed',width:0,height:0,left:-100,top:-100}}></div>
 }
 

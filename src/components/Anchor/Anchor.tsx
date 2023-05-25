@@ -8,30 +8,27 @@ import React, { AnchorHTMLAttributes, HTMLAttributeAnchorTarget, PropsWithChildr
  */
 
 export interface MilhasAnchorElement extends PropsWithChildren {
-    href?:string,
-    class?:string,
-    id?:string,
-    onClick?:Function,
-    style?:React.CSSProperties
+    href?: string,
+    class?: string,
+    id?: string,
+    onClick?: Function,
+    style?: React.CSSProperties
 }
 
-function Anchor(props:MilhasAnchorElement):ReactElement{
+function Anchor(props: MilhasAnchorElement): ReactElement {
     const href = props.href
 
 
-    const onclickHandler = (e:React.MouseEvent) => {
+    const onclickHandler = (e: React.MouseEvent) => {
         e.preventDefault();
-        if(href)
-        navigate(href)
+        if (href)
+            navigate(href)
     }
 
     return <a
-        className={props.class}
-        style={props.style}
-        id={props.id}
-        href={href}
-        onClick={(e)=>{onclickHandler(e);props.onClick?props.onClick():null}}
-        >{props.children}
+        {...props}
+        onClick={(e) => { onclickHandler(e); props.onClick ? props.onClick() : null }}
+    >{props.children}
     </a>
 }
 

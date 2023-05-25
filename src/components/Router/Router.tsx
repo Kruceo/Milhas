@@ -11,7 +11,6 @@ export interface MilhasRouterElement extends PropsWithChildren {
 function Router(props: MilhasRouterElement): ReactElement {
 
     const children = Array.isArray(props.children) ? props.children : [props.children]
-    console.log(children)
     const pathName = Path.name
     const e404name = E404.name
     const updateElement = () => { setUpdate(!update) }
@@ -23,7 +22,6 @@ function Router(props: MilhasRouterElement): ReactElement {
     const choose: any = [null]
 
     children.forEach((path) => {
-        console.log(path.type.name, path.type.name != 'Path')
 
         if (path.type.name == e404name) {                      //Caches the error 404 tag and return to economize
             e404[0] = path.props.children
@@ -53,7 +51,7 @@ function Router(props: MilhasRouterElement): ReactElement {
     if (choose[0] == null) {
         return e404
     }
-    // return choose
+
     return choose
 }
 

@@ -1,4 +1,4 @@
 my-react-app/
 src/lib/style.mjs
-node_modules/
+*node_modules/
 teste/

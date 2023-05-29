@@ -35,20 +35,29 @@ The `E404` component is rendered when none of the defined paths match the curren
 ```tsx
 <Router>
   <Path as="/home">
-    <p>Hello from Kruceo</p>
+    <p>
+    This accepts any path that starts with "home".
+    Ex: "/home/any/other/path" will match!
+   </p>
   </Path>
 
   <Path as="/about" absolute>
-    <p>This will only match the exact "/about" path!</p>
+    <p>
+    Because of the "absolute" attribute, this will only match the exact "/about" path.
+    Ex: "/about/any/other" will not match, 
+    but just "/about" will match.
+    </p>
   </Path>
 
   <Path as="/product/:id" absolute>
-   
-    <p>This will match any "pruduct" path with another path to follow. Like "/products/123"</p>
+    <p>
+    This will match any "product" path with another path to follow, like "/products/123".
+    Ex: "/product/255" will match.
+    </p>
   </Path>
 
   <E404>
-    <p>Oops... This page doesn't seem to exist!</p>
+    <p>This page will be rendered if any other path does not match the URL path.</p>
   </E404>
 </Router>
 ```

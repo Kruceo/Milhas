@@ -4,21 +4,30 @@ import E404 from '../E404'
 import { pathChangeEvent, popstateEvent } from '../../lib/event'
 
 
-export interface MilhasRouterElement extends PropsWithChildren {
+export interface RouterAttributes extends PropsWithChildren {
 
 }
 
-function Router(props: MilhasRouterElement): ReactElement {
+function Router(props: RouterAttributes): ReactElement {
 
     const children = Array.isArray(props.children) ? props.children : [props.children]
     const pathName = Path.name
     const e404name = E404.name
     const updateElement = () => { setUpdate(!update) }
-    window.addEventListener(pathChangeEvent.detail.name, () => updateElement())
-    window.addEventListener(popstateEvent.detail.name, () => updateElement())
+    //remove and add's state events listeners
+    window.removeEventListener(pathChangeEvent.detail.name, updateElement)
+    window.removeEventListener(popstateEvent.detail.name, updateElement)
+    window.addEventListener(pathChangeEvent.detail.name, updateElement)
+    window.addEventListener(popstateEvent.detail.name, updateElement)
 
     const [update, setUpdate] = useState(true)
+    /**
+    * This is the 404 element that will be rendered if exists.
+    */
     const e404: any = [null]
+    /**
+     * This is the element that will be rendered.
+     */
     const choose: any = [null]
 
     children.forEach((path) => {
@@ -32,10 +41,9 @@ function Router(props: MilhasRouterElement): ReactElement {
         const location = removeWhiteSpaces(window.location.pathname.split('/'))         //same ^
 
         if (path.props.absolute && as.length !== location.length) {                                                 //absolute attribute needs the same "location" and "as" array length, else, return
-
             return false
-
         }
+        
         let canBeReturned = true                                                       //variable to decide if is acceptable the current url to return a component
         as.forEach((chunk: string, index: number) => {
             if (chunk !== location[index]) {

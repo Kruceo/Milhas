@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react"
 
-export interface MilhasPathElement extends PropsWithChildren{
+export interface PathAttributes extends PropsWithChildren{
     as:string,
     absolute?:boolean
 }
@@ -21,7 +21,7 @@ export interface MilhasPathElement extends PropsWithChildren{
  * 
  */
 
-export default function Path(props:MilhasPathElement) {
+export default function Path(props:PathAttributes) {
     return <div id={"MilhasTrash" + props.as} style={{display:'none',position:'fixed',width:0,height:0,left:-100,top:-100}}></div>
 }
 

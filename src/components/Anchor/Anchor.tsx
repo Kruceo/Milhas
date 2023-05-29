@@ -7,7 +7,7 @@ import React, { AnchorHTMLAttributes, HTMLAttributeAnchorTarget, PropsWithChildr
  * @returns 
  */
 
-export interface MilhasAnchorElement extends PropsWithChildren {
+export interface AnchorAttributes extends PropsWithChildren {
     href?: string,
     class?: string,
     id?: string,
@@ -15,7 +15,7 @@ export interface MilhasAnchorElement extends PropsWithChildren {
     style?: React.CSSProperties
 }
 
-function Anchor(props: MilhasAnchorElement): ReactElement {
+function Anchor(props: AnchorAttributes): ReactElement {
     const href = props.href
 
 

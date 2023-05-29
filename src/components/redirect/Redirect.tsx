@@ -1,5 +1,5 @@
 import navigate from "../../lib/navigate";
-export interface MilhasRedirectElement{
+export interface RedirectAttributes{
     href:string
 }
 /**
@@ -16,7 +16,7 @@ export interface MilhasRedirectElement{
  */
 
 
-export default function Redirect(props:MilhasRedirectElement){
+export default function Redirect(props:RedirectAttributes){
     navigate(props.href)
     return <div id={"MilhasTrashRedirect" + props.href} style={{display:'none',position:'fixed',width:0,height:0,left:-100,top:-100}}></div>
 }

@@ -66,10 +66,19 @@
         const pathName = Path.name;
         const e404name = E404.name;
         const updateElement = () => { setUpdate(!update); };
-        window.addEventListener(pathChangeEvent.detail.name, () => updateElement());
-        window.addEventListener(popstateEvent.detail.name, () => updateElement());
+        //remove and add's state events listeners
+        window.removeEventListener(pathChangeEvent.detail.name, updateElement);
+        window.removeEventListener(popstateEvent.detail.name, updateElement);
+        window.addEventListener(pathChangeEvent.detail.name, updateElement);
+        window.addEventListener(popstateEvent.detail.name, updateElement);
         const [update, setUpdate] = react.useState(true);
+        /**
+        * This is the 404 element that will be rendered if exists.
+        */
         const e404 = [null];
+        /**
+         * This is the element that will be rendered.
+         */
         const choose = [null];
         children.forEach((path) => {
             if (path.type.name == e404name) { //Caches the error 404 tag and return to economize
@@ -108,7 +117,5 @@
     exports.E404 = E404;
     exports.Path = Path;
     exports.Router = Router;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
 
 }));

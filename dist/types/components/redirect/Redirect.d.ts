@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export interface MilhasRedirectElement {
+export interface RedirectAttributes {
     href: string;
 }
 /**
@@ -14,4 +14,4 @@ export interface MilhasRedirectElement {
  *    </Path>
  *    ...
  */
-export default function Redirect(props: MilhasRedirectElement): JSX.Element;
+export default function Redirect(props: RedirectAttributes): JSX.Element;

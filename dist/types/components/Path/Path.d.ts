@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-export interface MilhasPathElement extends PropsWithChildren {
+export interface PathAttributes extends PropsWithChildren {
     as: string;
     absolute?: boolean;
 }
@@ -18,4 +18,4 @@ export interface MilhasPathElement extends PropsWithChildren {
  * @param {string} as - Attribute that set the requested path.
  *
  */
-export default function Path(props: MilhasPathElement): JSX.Element;
+export default function Path(props: PathAttributes): JSX.Element;

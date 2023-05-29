@@ -4,12 +4,12 @@ import React, { PropsWithChildren, ReactElement } from "react";
  * @param {any} props
  * @returns
  */
-export interface MilhasAnchorElement extends PropsWithChildren {
+export interface AnchorAttributes extends PropsWithChildren {
     href?: string;
     class?: string;
     id?: string;
     onClick?: Function;
     style?: React.CSSProperties;
 }
-declare function Anchor(props: MilhasAnchorElement): ReactElement;
+declare function Anchor(props: AnchorAttributes): ReactElement;
 export default Anchor;

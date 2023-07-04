@@ -61,3 +61,5 @@ The `E404` component is rendered when none of the defined paths match the curren
   </E404>
 </Router>
 ```
+
+<a href="kruceo.com">Kruceo website</a> is built with Milhas.

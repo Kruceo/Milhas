@@ -1,3 +1,9 @@
+<div align="center" style="height:128px">
+
+<img src="icon.png" alt="icon">
+
+</div>
+
 # **Milhas**
 
 ## **Introduction**
@@ -62,4 +68,4 @@ The `E404` component is rendered when none of the defined paths match the curren
 </Router>
 ```
 
-<a href="kruceo.com">Kruceo website</a> is built with Milhas.
+<a href="https://kruceo.com">Kruceo website</a> is built with Milhas.

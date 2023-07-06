@@ -1,6 +1,6 @@
-<div align="center" style="height:128px">
+<div align="center">
 
-<img src="icon.png" alt="icon">
+<img style="height:128px;width:128px" src="icon.png" alt="icon">
 
 </div>
 

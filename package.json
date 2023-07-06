@@ -1,6 +1,6 @@
 {
   "name": "milhas",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "SPA React Router.",
   "main": "./src/bundle.js",
   "module": "dist/bundle.js",

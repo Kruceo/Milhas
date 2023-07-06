@@ -1,10 +1,10 @@
 {
   "name": "milhas",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "SPA React Router.",
   "main": "./src/bundle.js",
   "module": "dist/bundle.js",
-  "typings": "dist/types/src/index.d.ts",
+  "typings": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],

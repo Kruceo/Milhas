@@ -1,0 +1,6 @@
+.github
+node_modules
+src/
+icon.png
+rollup.config.mjs
+tsconfig.json

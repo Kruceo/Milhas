@@ -24,7 +24,7 @@
             if (href)
                 navigate(href);
         };
-        return jsxRuntime.jsx("a", Object.assign({}, props, { onClick: (e) => { onclickHandler(e); props.onClick ? props.onClick() : null; } }, { children: props.children }));
+        return jsxRuntime.jsx("a", Object.assign({}, props, { onClick: (e) => { onclickHandler(e); props.onClick ? props.onClick(e) : null; } }, { children: props.children }));
     }
 
     /**
@@ -117,5 +117,7 @@
     exports.E404 = E404;
     exports.Path = Path;
     exports.Router = Router;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
 
 }));

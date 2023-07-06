@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 
-export interface E404Attributes extends PropsWithChildren {}
+export interface E404Attributes extends PropsWithChildren {
+}
 
 /**
  * The content inside this tag will be rendered in case of any path is matched.

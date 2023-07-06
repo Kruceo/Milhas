@@ -1,5 +1,5 @@
 import navigate from "../../lib/navigate";
-import React, { AnchorHTMLAttributes, HTMLAttributeAnchorTarget, PropsWithChildren, ReactComponentElement, ReactElement } from "react";
+import React, { AnchorHTMLAttributes, MouseEventHandler, PropsWithChildren, ReactElement } from "react";
 
 /**
  * Similar to default anchor HTML tag, but doesn't a page refresh on click.
@@ -7,11 +7,11 @@ import React, { AnchorHTMLAttributes, HTMLAttributeAnchorTarget, PropsWithChildr
  * @returns 
  */
 
-export interface AnchorAttributes extends PropsWithChildren {
+export interface AnchorAttributes extends AnchorHTMLAttributes<HTMLAnchorElement> {
     href?: string,
-    class?: string,
+    className?: string,
     id?: string,
-    onClick?: Function,
+    onClick?: MouseEventHandler<HTMLAnchorElement>,
     style?: React.CSSProperties
 }
 
@@ -27,7 +27,7 @@ function Anchor(props: AnchorAttributes): ReactElement {
 
     return <a
         {...props}
-        onClick={(e) => { onclickHandler(e); props.onClick ? props.onClick() : null }}
+        onClick={(e) => { onclickHandler(e); props.onClick ? props.onClick(e) : null }}
     >{props.children}
     </a>
 }

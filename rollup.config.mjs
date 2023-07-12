@@ -14,7 +14,9 @@ export default {
   },
   external: ['react', 'react-dom'],
   plugins: [
-    typescript(),
+    typescript({
+      sourceMap:true,
+    }),
     babel({
       babelHelpers: 'bundled',
       presets: [

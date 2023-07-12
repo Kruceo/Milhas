@@ -113,10 +113,29 @@
         return arr.filter(each => { return each != ''; });
     }
 
+    /**
+     * This component just auto redirect if the same be rendered.
+     * @example
+     * <Router>
+     *    <Path as="/an/older/path">
+     *        <Redirect href="/newer/path"/>
+     *    </Path>
+     *    <Path as="/newer/path">
+     *        You reach this!
+     *    </Path>
+     *    ...
+     */
+    function Redirect(props) {
+        navigate(props.href);
+        return jsxRuntime.jsx("div", { id: "MilhasTrashRedirect" + props.href, style: { display: 'none', position: 'fixed', width: 0, height: 0, left: -100, top: -100 } });
+    }
+
     exports.Anchor = Anchor;
     exports.E404 = E404;
     exports.Path = Path;
+    exports.Redirect = Redirect;
     exports.Router = Router;
+    exports.navigate = navigate;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

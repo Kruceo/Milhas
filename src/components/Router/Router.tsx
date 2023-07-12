@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement, useState } from "react"
-import Path from '../Path'
-import E404 from '../E404'
+import Path from '../Path/Path'
+import E404 from '../E404/E404'
 import { pathChangeEvent, popstateEvent } from '../../lib/event'
 
 
